@@ -1,26 +1,22 @@
 header {
-  background-color: red;
+  background-color: #FFF;
+  font-family: 'Barrio', cursive;
 }
 
 .header-container {
-  padding: 19px 16px;
+  padding: 20px;
   display: flex;
   align-items: center;
 }
 
 .header-title {
   flex: 1;
-  text-transform: uppercase;
-  font-family: 'Barrio', cursive;
-}
-
-.mobile-menu-block, .desktop-menu-block {
-  text-transform: uppercase;
-  font-family: 'Barrio', cursive;
+  font-size: 30px;
 }
 
 .mobile-menu-block {
   display: flex;
+  cursor: pointer;
 }
 
 .desktop-menu-block {
@@ -28,8 +24,7 @@ header {
 }
 
 .menu-icon {
-  margin-left: 10px;
-  cursor: pointer;
+  margin-left: 20px;
 
   > div + * {
     margin-top: 5px;
@@ -57,14 +52,18 @@ header {
 
 @media (min-width: 750px) {
   .header-container {
-    padding: 19px 32px;
-  }
-
-  .desktop-menu-block {
-    display: flex;
+    padding: 20px 32px;
   }
 
   .mobile-menu-block {
     display: none;
+  }
+
+  .desktop-menu-block {
+    display: flex;
+
+    a {
+      padding: 0px 8px;
+    }
   }
 }
