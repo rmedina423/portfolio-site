@@ -1,3 +1,70 @@
 header {
-	background-color: pink;
+  background-color: red;
+}
+
+.header-container {
+  padding: 19px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  flex: 1;
+  text-transform: uppercase;
+  font-family: 'Barrio', cursive;
+}
+
+.mobile-menu-block, .desktop-menu-block {
+  text-transform: uppercase;
+  font-family: 'Barrio', cursive;
+}
+
+.mobile-menu-block {
+  display: flex;
+}
+
+.desktop-menu-block {
+  display: none;
+}
+
+.menu-icon {
+  margin-left: 10px;
+  cursor: pointer;
+
+  > div + * {
+    margin-top: 5px;
+  }
+
+  .bar-1, .bar-2, .bar-3 {
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    transition: 0.4s;
+  }
+
+  &.open .bar-1 {
+    transform: rotate(-45deg) translate(-6px, 5px);
+  }
+
+  &.open .bar-2 {
+    opacity: 0;
+  }
+
+  &.open .bar-3 {
+    transform: rotate(45deg) translate(-7px, -7px);
+  }
+}
+
+@media (min-width: 750px) {
+  .header-container {
+    padding: 19px 32px;
+  }
+
+  .desktop-menu-block {
+    display: flex;
+  }
+
+  .mobile-menu-block {
+    display: none;
+  }
 }

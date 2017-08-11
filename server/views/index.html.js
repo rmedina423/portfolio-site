@@ -6,6 +6,7 @@ module.exports = () => `
     <title>Portfolio-Website</title>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
     <link href="/styles.css" rel="stylesheet" />
   </head>
   <body>
