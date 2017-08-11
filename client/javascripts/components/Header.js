@@ -24,9 +24,9 @@ export default class Header extends React.Component {
           <h1 className="header-title">
             <a href="/">Ryan Medina</a>
           </h1>
-          <div className="mobile-menu-block">
+          <div className="mobile-menu-block" onClick={this.menuIconClick}>
             <h2>Menu</h2>
-            <MenuIcon isMenuIconOpen={this.state.isMenuIconOpen} menuIconClick={this.menuIconClick} />
+            <MenuIcon isMenuIconOpen={this.state.isMenuIconOpen} />
           </div>
           <div className="desktop-menu-block">
             <div className="sub-menu-block">
@@ -45,9 +45,9 @@ export default class Header extends React.Component {
   }
 }
 
-const MenuIcon = ({isMenuIconOpen, menuIconClick}) => {  
+const MenuIcon = ({isMenuIconOpen}) => {  
   return (
-    <div className={isMenuIconOpen ? `menu-icon open` : `menu-icon`} onClick={menuIconClick}>
+    <div className={isMenuIconOpen ? `menu-icon open` : `menu-icon`}>
       <div className="bar-1"></div>
       <div className="bar-2"></div>
       <div className="bar-3"></div>
