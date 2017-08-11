@@ -1,4 +1,9 @@
-node_modules/
-public/
-coverage/
-stats.json
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# misc
+.idea
+dist

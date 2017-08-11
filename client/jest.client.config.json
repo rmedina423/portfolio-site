@@ -1,10 +1,8 @@
 {
-  "collectCoverageFrom" : [
-    "client/javascripts/**/*.js"
-  ],
-  "coverageDirectory": "../coverage/client",
-  "coveragePathIgnorePatterns": [
-    "/client/javascripts/index.js"
-  ],
-  "setupTestFrameworkScriptFile": "../node_modules/jest-enzyme/lib/index.js"
+  "collectCoverageFrom": ["client/js/**/*.js"],
+  "setupTestFrameworkScriptFile": "../node_modules/jest-enzyme/lib/index.js",
+  "moduleNameMapper": {
+    "^.*\\.scss$": "<rootDir>/client/tests/utils/scssStub.js"
+  },
+  "coverageDirectory": "../coverage/"
 }

@@ -1,51 +1,53 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const packageJSON = require('./package.json');
+
+const version = packageJSON.version;
+const name = packageJSON.name;
 
 module.exports = {
-  entry: './client/javascripts/index.js',
-  devtool: 'cheap-module-source-map',
+  entry: {
+    [name]: ['whatwg-fetch', 'babel-polyfill', './client/js/index.js']
+  },
+  devtool: 'inline-source-map',
   output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: `[name]/${version}/[name]-${version}.min.js`,
     publicPath: '/'
+  },
+  resolve: {
+    modules: ['client/js', 'node_modules']
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'client')],
+        include: path.join(__dirname, 'client/js/'),
+        exclude: /node_modules/,
         options: { cacheDirectory: true }
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
+          use: [{
+            loader: 'css-loader?sourceMap?root=.',
+            options: {
+              minimize: true
+            }
+          }, {
+            loader: 'sass-loader'
+          }]
         })
       }
     ]
   },
   plugins: [
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production'
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: 'cheap-module-source-map',
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        screw_ie8: true
-      },
-      comments: false
-    }),
-    new ExtractTextPlugin('styles.css')
+    new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new ExtractTextPlugin({ filename: `[name]/${version}/[name]-${version}.min.css` }),
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 };

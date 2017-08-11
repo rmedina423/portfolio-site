@@ -1,36 +1,56 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './client/javascripts/index.js',
-  devtool: 'eval-source-map',
+  entry: ['whatwg-fetch', 'babel-polyfill', './client/javascripts/index.js'],
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '/'
+  },
+  resolve: {
+    modules: ['client/js', 'node_modules']
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'client')],
+        include: path.join(__dirname, 'client/javascripts/'),
+        exclude: /node_modules/,
         options: { cacheDirectory: true }
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        test: /\.s?css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        }, {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
+        }]
       }
     ]
   },
   plugins: [
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development'
-    }),
-    new ExtractTextPlugin('styles.css')
-  ]
+    new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ],
+  watch: true,
+  devServer: {
+    hot: true,
+    contentBase: path.join(__dirname, 'public'),
+    publicPath: '/',
+    clientLogLevel: 'none',
+    quiet: true
+  }
 };
