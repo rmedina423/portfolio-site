@@ -16,7 +16,7 @@ module.exports = merge(commonWebpack('latest'), {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    publicPath: `/`,
+    publicPath: '/',
     quiet: false,
   }
 });

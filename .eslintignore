@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+public
+webpack.dev.config.js
+webpack.prod.config.js
+webpack.common.js
+src/tests/utils/entry.js

@@ -8,11 +8,7 @@ import Footer from '../../javascripts/components/Footer';
 
 describe('App Component', function () {
   beforeEach(() => {
-    this.app = shallow(
-      <App>
-        {<HomePage />}
-      </App>
-    );
+    this.app = shallow(<App>{<HomePage />}</App>);
   });
 
   test('renders a HomePage', () => {

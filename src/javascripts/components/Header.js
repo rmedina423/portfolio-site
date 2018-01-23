@@ -1,23 +1,23 @@
 import React from 'react';
 
 export default class Header extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
       isMenuIconOpen: false
-    }
+    };
 
     this.menuIconClick = this.menuIconClick.bind(this);
   }
 
-  menuIconClick () {
+  menuIconClick() {
     this.setState(prevState => ({
       isMenuIconOpen: !prevState.isMenuIconOpen
     }));
   }
 
-  render () {
+  render() {
     return (
       <header>
         <div className="header-container">
@@ -45,12 +45,10 @@ export default class Header extends React.Component {
   }
 }
 
-const MenuIcon = ({isMenuIconOpen}) => {  
-  return (
-    <div className={isMenuIconOpen ? `menu-icon open` : `menu-icon`}>
-      <div className="bar-1"></div>
-      <div className="bar-2"></div>
-      <div className="bar-3"></div>
-    </div>
-  )
-};
+const MenuIcon = ({ isMenuIconOpen }) => (
+  <div className={isMenuIconOpen ? 'menu-icon open' : 'menu-icon'}>
+    <div className="bar-1" />
+    <div className="bar-2" />
+    <div className="bar-3" />
+  </div>
+);

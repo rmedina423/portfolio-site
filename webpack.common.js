@@ -12,7 +12,7 @@ module.exports = function (version) {
       filename: `${name}-${version}.min.js`,
       publicPath: ASSET_PATH
     },
-     module: {
+    module: {
       rules: [
         {
           test: /\.js$/,
