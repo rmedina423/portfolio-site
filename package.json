@@ -8,7 +8,7 @@
   "scripts": {
     "deploy": "rm -rf ./dist && yarn run webpack",
     "lint": "./node_modules/eslint/bin/eslint.js -c eslint.config.json .",
-    "jest": "NODE_ENV=test node_modules/jest/bin/jest.js -c src/jest.config.json",
+    "jest": "NODE_ENV=test node_modules/jest/bin/jest.js -c ./jest.config.json",
     "test": "yarn run jest && yarn run lint",
     "test:coverage": "yarn run jest --coverage && yarn run lint",
     "travis:coverage": "yarn run jest --coverage --maxWorkers=4 && yarn run lint",

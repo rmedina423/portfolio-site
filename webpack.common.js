@@ -6,7 +6,7 @@ const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 module.exports = function (version) {
   return {
-    entry: ['whatwg-fetch', 'babel-polyfill', './src/javascripts/index.js'],
+    entry: ['whatwg-fetch', 'babel-polyfill', './src/js/index.js'],
     output: {
       path: path.join(__dirname, `dist/${name}/${version}`),
       filename: `${name}-${version}.min.js`,
@@ -17,7 +17,7 @@ module.exports = function (version) {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          include: path.join(__dirname, 'src/javascripts/'),
+          include: path.join(__dirname, 'src/js/'),
           exclude: /node_modules/,
           options: { cacheDirectory: true }
         },

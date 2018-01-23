@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import HomePage from '../../javascripts/components/HomePage';
+import HomePage from '../../src/js/components/HomePage';
 
 describe('HomePage Component', function () {
   beforeEach(() => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Router from '../javascripts/Router';
-import HomePage from '../javascripts/components/HomePage';
+import Router from '../src/js/Router';
+import HomePage from '../src/js/components/HomePage';
 
 describe('Router Component', function () {
   beforeEach(() => {

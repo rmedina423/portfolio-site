@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from '../../javascripts/components/App';
-import HomePage from '../../javascripts/components/HomePage';
-import Header from '../../javascripts/components/Header';
-import Footer from '../../javascripts/components/Footer';
+import App from '../../src/js/components/App';
+import HomePage from '../../src/js/components/HomePage';
+import Header from '../../src/js/components/Header';
+import Footer from '../../src/js/components/Footer';
 
 describe('App Component', function () {
   beforeEach(() => {
