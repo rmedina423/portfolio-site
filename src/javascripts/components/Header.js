@@ -8,13 +8,22 @@ export default class Header extends React.Component {
       isMenuIconOpen: false
     };
 
-    this.menuIconClick = this.menuIconClick.bind(this);
+    this.onMenuIconClick = this.onMenuIconClick.bind(this);
+    this.onMenuIconKeyPress = this.onMenuIconKeyPress.bind(this);
   }
 
-  menuIconClick() {
+  onMenuIconClick() {
     this.setState(prevState => ({
       isMenuIconOpen: !prevState.isMenuIconOpen
     }));
+  }
+
+  onMenuIconKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.setState(prevState => ({
+        isMenuIconOpen: !prevState.isMenuIconOpen
+      }));
+    }
   }
 
   render() {
@@ -24,9 +33,13 @@ export default class Header extends React.Component {
           <h1 className="header-title">
             <a href="/">Ryan Medina</a>
           </h1>
-          <div className="mobile-menu-block" onClick={this.menuIconClick}>
+          <div className="mobile-menu-block" onClick={this.onMenuIconClick} onKeyPress={this.onMenuIconKeyPress} role="button" tabIndex="0">
             <h2>Menu</h2>
-            <MenuIcon isMenuIconOpen={this.state.isMenuIconOpen} />
+            <div className={this.state.isMenuIconOpen ? 'menu-icon open' : 'menu-icon'}>
+              <div className="bar-1" />
+              <div className="bar-2" />
+              <div className="bar-3" />
+            </div>
           </div>
           <div className="desktop-menu-block">
             <div className="sub-menu-block">
@@ -44,11 +57,3 @@ export default class Header extends React.Component {
     );
   }
 }
-
-const MenuIcon = ({ isMenuIconOpen }) => (
-  <div className={isMenuIconOpen ? 'menu-icon open' : 'menu-icon'}>
-    <div className="bar-1" />
-    <div className="bar-2" />
-    <div className="bar-3" />
-  </div>
-);

@@ -9,6 +9,6 @@ describe('Header Component', function () {
   });
 
   test('renders Header', () => {
-    expect(this.header.text()).toBe('Ryan MedinaMenu<MenuIcon />PortfolioAbout & ContactTwitterInstagramDribble');
+    expect(this.header.text()).toBe('Ryan MedinaMenuPortfolioAbout & ContactTwitterInstagramDribble');
   });
 });
