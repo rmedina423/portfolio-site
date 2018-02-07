@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage Component should match snapshot 1`] = `
+<div
+  className="tile-container"
+>
+  <div
+    className="tile-column"
+  >
+    <Tile
+      imgName="ryan_pool_CO3.jpg"
+      link="/another-page"
+      title="The Chocolate Room1"
+    />
+    <Tile
+      imgName="vegas-2016.jpg"
+      link="/another-page"
+      title="Vegas 2016"
+    />
+    <Tile
+      imgName="los-angeles-2016.jpg"
+      link="/another-page"
+      title="Los Angeles 2016"
+    />
+  </div>
+  <div
+    className="tile-column"
+  >
+    <Tile
+      imgName="valentines-2017.jpg"
+      link="/another-page"
+      title="Valentines 2017"
+    />
+    <Tile
+      imgName="tonto-national-bridge-2016.jpg"
+      link="/another-page"
+      title="Tonto National Bridge 2016"
+    />
+  </div>
+  <div
+    className="tile-column"
+  >
+    <Tile
+      imgName="thanksgiving-2016.jpg"
+      link="/another-page"
+      title="Thanksgiving 2016"
+    />
+    <Tile
+      imgName="sedona-2016.jpg"
+      link="/another-page"
+      title="Sedona 2016"
+    />
+  </div>
+  <div
+    className="tile-column"
+  >
+    <Tile
+      imgName="san-diego-2016.jpg"
+      link="/another-page"
+      title="San Diego 2016"
+    />
+    <Tile
+      imgName="park-photoshoot-2017.jpg"
+      link="/another-page"
+      title="Park Photoshoot 2017"
+    />
+  </div>
+</div>
+`;

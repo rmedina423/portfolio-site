@@ -1,12 +1,13 @@
 @import 'header';
 @import 'footer';
+@import 'tile';
 
 body {
   margin: 0;
-  background: black;
+  background: #2f2d2e;
 }
 
-h1, h2 {
+h1, h2, h3 {
   margin: 0;
 }
 

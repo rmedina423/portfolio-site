@@ -4,7 +4,7 @@ const { name } = require('./package.json');
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
-module.exports = function (version) {
+module.exports = function(version) {
   return {
     entry: ['whatwg-fetch', 'babel-polyfill', './src/js/index.js'],
     output: {
@@ -27,14 +27,10 @@ module.exports = function (version) {
             fallback: 'style-loader',
             use: [
               {
-                loader: 'css-loader?sourceMap?root=.',
-                options: {
-                  minimize: true
-                }
+                loader: 'css-loader',
+                options: { sourceMap: true, minimize: true }
               },
-              {
-                loader: 'sass-loader'
-              }
+              { loader: 'sass-loader', options: { sourceMap: true } }
             ]
           })
         }
