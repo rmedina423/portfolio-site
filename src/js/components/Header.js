@@ -47,11 +47,6 @@ export default class Header extends React.Component {
               <Link to="/">Portfolio</Link>
               <Link to="/">About & Contact</Link>
             </div>
-            <div className="sub-menu-block">
-              <Link to="/">Twitter</Link>
-              <Link to="/">Instagram</Link>
-              <Link to="/">Dribble</Link>
-            </div>
           </div>
         </div>
       </header>

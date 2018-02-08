@@ -9,7 +9,16 @@ export default function Router() {
     <BrowserRouter>
       <App>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/coming-soon" component={ComingSoonPage} />
       </App>
     </BrowserRouter>
+  );
+}
+
+function ComingSoonPage () {
+  return (
+    <div className="coming-soon-container">
+      <h2>Coming Soon...</h2>
+    </div>
   );
 }

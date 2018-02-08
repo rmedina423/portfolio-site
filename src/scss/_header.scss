@@ -1,5 +1,5 @@
 header {
-  background-color: #f16446;
+  background-color: #f16445;
   font-family: 'Barrio', cursive;
 }
 
@@ -17,6 +17,7 @@ header {
 .mobile-menu-block {
   display: flex;
   cursor: pointer;
+  outline: none;
 }
 
 .desktop-menu-block {

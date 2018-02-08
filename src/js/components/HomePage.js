@@ -29,7 +29,10 @@ function getCollectionSets(collection, numberOfColumns) {
 
 function distributeExcessCollection(collectionSets, numberOfColumns) {
   if (collectionSets.length !== numberOfColumns) {
-    const excessCollection = collectionSets.pop();
+    const excessCollection = collectionSets
+      .splice(numberOfColumns, collectionSets.length - numberOfColumns)
+      .reduce((a, b) => a.concat(b), []);
+
     excessCollection.forEach((collection, i) => {
       collectionSets[i].push(collection);
     });
