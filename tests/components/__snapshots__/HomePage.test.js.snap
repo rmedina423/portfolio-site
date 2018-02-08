@@ -8,19 +8,24 @@ exports[`HomePage Component should match snapshot 1`] = `
     className="tile-column"
   >
     <Tile
-      imgName="ryan_pool_CO3.jpg"
-      link="/another-page"
-      title="The Chocolate Room1"
-    />
-    <Tile
       imgName="vegas-2016.jpg"
-      link="/another-page"
+      link="/coming-soon"
       title="Vegas 2016"
     />
     <Tile
-      imgName="los-angeles-2016.jpg"
-      link="/another-page"
-      title="Los Angeles 2016"
+      imgName="denver-2016.jpg"
+      link="/coming-soon"
+      title="Denver 2016"
+    />
+    <Tile
+      imgName="tonto-national-bridge-2016.jpg"
+      link="/coming-soon"
+      title="Tonto National Bridge 2016"
+    />
+    <Tile
+      imgName="jerome-2017.jpg"
+      link="/coming-soon"
+      title="Jerome 2017"
     />
   </div>
   <div
@@ -28,41 +33,56 @@ exports[`HomePage Component should match snapshot 1`] = `
   >
     <Tile
       imgName="valentines-2017.jpg"
-      link="/another-page"
+      link="/coming-soon"
       title="Valentines 2017"
     />
     <Tile
-      imgName="tonto-national-bridge-2016.jpg"
-      link="/another-page"
-      title="Tonto National Bridge 2016"
-    />
-  </div>
-  <div
-    className="tile-column"
-  >
-    <Tile
       imgName="thanksgiving-2016.jpg"
-      link="/another-page"
+      link="/coming-soon"
       title="Thanksgiving 2016"
     />
     <Tile
-      imgName="sedona-2016.jpg"
-      link="/another-page"
-      title="Sedona 2016"
+      imgName="park-photoshoot-2017.jpg"
+      link="/coming-soon"
+      title="Park Photoshoot 2017"
     />
   </div>
   <div
     className="tile-column"
   >
     <Tile
-      imgName="san-diego-2016.jpg"
-      link="/another-page"
-      title="San Diego 2016"
+      imgName="sedona-2016.jpg"
+      link="/coming-soon"
+      title="Sedona 2016"
     />
     <Tile
-      imgName="park-photoshoot-2017.jpg"
-      link="/another-page"
-      title="Park Photoshoot 2017"
+      imgName="flagstaff-2016.jpg"
+      link="/coming-soon"
+      title="Flagstaff 2016"
+    />
+    <Tile
+      imgName="san-diego-2016.jpg"
+      link="/coming-soon"
+      title="San Diego 2016"
+    />
+  </div>
+  <div
+    className="tile-column"
+  >
+    <Tile
+      imgName="denver-2017.jpg"
+      link="/coming-soon"
+      title="Denver 2017"
+    />
+    <Tile
+      imgName="los-angeles-2016.jpg"
+      link="/coming-soon"
+      title="Los Angeles 2016"
+    />
+    <Tile
+      imgName="graduation-2016.jpg"
+      link="/coming-soon"
+      title="Graduation 2016"
     />
   </div>
 </div>

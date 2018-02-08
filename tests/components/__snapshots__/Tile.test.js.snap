@@ -23,7 +23,7 @@ exports[`Tile Component should match snapshot 1`] = `
   <img
     alt="The Chocolate Room1"
     className="tile-img"
-    src="/assets/ryan_pool_CO3.jpg"
+    src="/photos/ryan_pool_CO3.jpg"
   />
 </Link>
 `;
