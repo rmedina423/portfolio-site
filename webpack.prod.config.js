@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const commonWebpack = require('./webpack.common');
 const { name, version } = require('./package.json');
+const path = require('path');
 
 module.exports = merge(commonWebpack(version), {
   output: {
@@ -14,5 +15,9 @@ module.exports = merge(commonWebpack(version), {
     new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
     new webpack.optimize.UglifyJsPlugin({ minimize: true }),
     new webpack.optimize.ModuleConcatenationPlugin()
-  ]
+  ],
+  devServer: {
+    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'assets')],
+    quiet: false,
+  }
 });

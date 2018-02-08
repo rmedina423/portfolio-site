@@ -2,15 +2,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const { name } = require('./package.json');
 
-const ASSET_PATH = process.env.ASSET_PATH || '/';
-
 module.exports = function(version) {
   return {
     entry: ['whatwg-fetch', 'babel-polyfill', './src/js/index.js'],
     output: {
       path: path.join(__dirname, `dist/${name}/${version}`),
-      filename: `${name}-${version}.min.js`,
-      publicPath: ASSET_PATH
+      filename: `${name}-${version}.min.js`
     },
     module: {
       rules: [

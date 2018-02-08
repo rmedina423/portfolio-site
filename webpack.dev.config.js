@@ -15,8 +15,7 @@ module.exports = merge(commonWebpack('latest'), {
     new webpack.EnvironmentPlugin({ NODE_ENV: 'development' })
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    publicPath: '/',
+    contentBase: [path.join(__dirname, 'devServer'), path.join(__dirname, 'assets')],
     quiet: false,
   }
 });
