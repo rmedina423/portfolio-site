@@ -8,8 +8,8 @@ describe('Header Component', function () {
     this.header = shallow(<Header />);
   });
 
-  test('renders Header', () => {
-    expect(this.header.text()).toBe('Ryan MedinaMenuPortfolioAbout & ContactTwitterInstagramDribble');
+  test('should match snapshot', () => {
+    expect(this.header.getElement()).toMatchSnapshot();
   });
 
   test('changes state when .mobile-menu-block gets clicked', () => {

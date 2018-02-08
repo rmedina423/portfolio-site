@@ -8,7 +8,7 @@ describe('HomePage Component', function () {
     this.homePage = shallow(<HomePage />);
   });
 
-  test('renders HomePage', () => {
-    expect(this.homePage.text()).toBe('Welcome to the Home Page');
+  test('should match snapshot', () => {
+    expect(this.homePage.getElement()).toMatchSnapshot();
   });
 });

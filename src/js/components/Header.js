@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class Header extends React.Component {
       <header>
         <div className="header-container">
           <h1 className="header-title">
-            <a href="/">Ryan Medina</a>
+            <Link to="/">Ryan Medina</Link>
           </h1>
           <div className="mobile-menu-block" onClick={this.onMenuIconClick} onKeyPress={this.onMenuIconKeyPress} role="button" tabIndex="0">
             <h2>Menu</h2>
@@ -43,13 +44,13 @@ export default class Header extends React.Component {
           </div>
           <div className="desktop-menu-block">
             <div className="sub-menu-block">
-              <a href="/">Portfolio</a>
-              <a href="/">About & Contact</a>
+              <Link to="/">Portfolio</Link>
+              <Link to="/">About & Contact</Link>
             </div>
             <div className="sub-menu-block">
-              <a href="/">Twitter</a>
-              <a href="/">Instagram</a>
-              <a href="/">Dribble</a>
+              <Link to="/">Twitter</Link>
+              <Link to="/">Instagram</Link>
+              <Link to="/">Dribble</Link>
             </div>
           </div>
         </div>
