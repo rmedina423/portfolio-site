@@ -11,7 +11,7 @@ export default function Tile(props) {
           <h3>— view —</h3>
         </div>
       </div>
-      <img className="tile-img" src={`/photos/${props.imgName}`} alt={props.title} />
+      <img className="tile-img" src={`./images/${props.imgName}`} alt={props.title} />
     </Link>
   );
 }

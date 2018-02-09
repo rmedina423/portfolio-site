@@ -6,16 +6,13 @@ const path = require('path');
 const { name } = require('./package.json');
 
 module.exports = merge(commonWebpack('latest'), {
-  output: {
-    filename: `${name}-latest.js`
-  },
   devtool: 'eval',
-  plugins: [
-    new ExtractTextPlugin({ filename: `${name}-latest.css` }),
-    new webpack.EnvironmentPlugin({ NODE_ENV: 'development' })
-  ],
+  plugins: [new webpack.EnvironmentPlugin({ NODE_ENV: 'development' })],
   devServer: {
-    contentBase: [path.join(__dirname, 'devServer'), path.join(__dirname, 'assets')],
-    quiet: false,
+    contentBase: [
+      path.join(__dirname, 'public'),
+      path.join(__dirname, 'assets')
+    ],
+    quiet: false
   }
 });

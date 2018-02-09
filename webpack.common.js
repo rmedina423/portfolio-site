@@ -6,8 +6,8 @@ module.exports = function(version) {
   return {
     entry: ['whatwg-fetch', 'babel-polyfill', './src/js/index.js'],
     output: {
-      path: path.join(__dirname, `dist/${name}/${version}`),
-      filename: `${name}-${version}.min.js`
+      path: path.join(__dirname, 'dist/'),
+      filename: 'index.js'
     },
     module: {
       rules: [
@@ -32,6 +32,7 @@ module.exports = function(version) {
           })
         }
       ]
-    }
+    },
+    plugins: [new ExtractTextPlugin({ filename: 'main.css' })]
   };
 };
