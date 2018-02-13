@@ -7,3 +7,5 @@ coverage
 # misc
 .idea
 dist
+# keep gh-pages from being committed in main
+gh-pages

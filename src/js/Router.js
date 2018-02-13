@@ -6,7 +6,7 @@ import HomePage from './components/HomePage';
 
 export default function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio-site">
       <App>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/coming-soon" component={ComingSoonPage} />
