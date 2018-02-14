@@ -8,7 +8,7 @@ describe('Footer Component', function () {
     this.footer = shallow(<Footer />);
   });
 
-    test('should match snapshot', () => {
+  test('should match snapshot', () => {
     expect(this.footer.getElement()).toMatchSnapshot();
   });
 });

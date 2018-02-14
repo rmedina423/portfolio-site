@@ -4,6 +4,11 @@ exports[`Tile Component should match snapshot 1`] = `
 <Link
   className="tile"
   replace={false}
+  style={
+    Object {
+      "maxWidth": "100px",
+    }
+  }
   to="'/another-page"
 >
   <div
@@ -23,7 +28,7 @@ exports[`Tile Component should match snapshot 1`] = `
   <img
     alt="The Chocolate Room1"
     className="tile-img"
-    src="/photos/ryan_pool_CO3.jpg"
+    src="./images/ryan_pool_CO3.jpg"
   />
 </Link>
 `;

@@ -9,6 +9,7 @@ describe('Tile Component', function() {
       link="'/another-page"
       title="The Chocolate Room1"
       imgName="ryan_pool_CO3.jpg"
+      tileWidth="100px"
       />);
   });
 

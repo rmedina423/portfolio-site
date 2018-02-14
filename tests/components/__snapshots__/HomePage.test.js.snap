@@ -4,86 +4,94 @@ exports[`HomePage Component should match snapshot 1`] = `
 <div
   className="tile-container"
 >
-  <div
-    className="tile-column"
+  <MasonryComponent
+    className=""
+    disableImagesLoaded={false}
+    elementType="div"
+    enableResizableChildren={false}
+    onLayoutComplete={[Function]}
+    onRemoveComplete={[Function]}
+    options={Object {}}
+    updateOnEachImageLoad={false}
   >
     <Tile
       imgName="vegas-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Vegas 2016"
     />
     <Tile
       imgName="denver-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Denver 2016"
     />
     <Tile
       imgName="tonto-national-bridge-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Tonto National Bridge 2016"
     />
     <Tile
-      imgName="jerome-2017.jpg"
-      link="/coming-soon"
-      title="Jerome 2017"
-    />
-  </div>
-  <div
-    className="tile-column"
-  >
-    <Tile
       imgName="valentines-2017.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Valentines 2017"
     />
     <Tile
       imgName="thanksgiving-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Thanksgiving 2016"
     />
     <Tile
       imgName="park-photoshoot-2017.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Park Photoshoot 2017"
     />
-  </div>
-  <div
-    className="tile-column"
-  >
     <Tile
       imgName="sedona-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Sedona 2016"
     />
     <Tile
       imgName="flagstaff-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Flagstaff 2016"
     />
     <Tile
       imgName="san-diego-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="San Diego 2016"
     />
-  </div>
-  <div
-    className="tile-column"
-  >
     <Tile
       imgName="denver-2017.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Denver 2017"
     />
     <Tile
       imgName="los-angeles-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Los Angeles 2016"
     />
     <Tile
       imgName="graduation-2016.jpg"
       link="/coming-soon"
+      tileWidth="250.5px"
       title="Graduation 2016"
     />
-  </div>
+    <Tile
+      imgName="jerome-2017.jpg"
+      link="/coming-soon"
+      tileWidth="250.5px"
+      title="Jerome 2017"
+    />
+  </MasonryComponent>
 </div>
 `;

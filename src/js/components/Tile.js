@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Tile(props) {
   return (
-    <Link to={props.link} className="tile">
+    <Link to={props.link} className="tile" style={{ maxWidth: props.tileWidth }}>
       <div className="tile-overlay">
         <div className="tile-title">
           <h2>{props.title}</h2>
@@ -19,5 +19,6 @@ export default function Tile(props) {
 Tile.propTypes = {
   link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  imgName: PropTypes.string.isRequired
+  imgName: PropTypes.string.isRequired,
+  tileWidth: PropTypes.string.isRequired
 };

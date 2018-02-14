@@ -1,44 +1,32 @@
 import React from 'react';
-import uuidv1 from 'uuid/v1';
-import chunk from 'lodash.chunk';
+import Masonry from 'react-masonry-component';
 import Tile from './Tile';
 import collectionOfPhotos from '../collectionOfPhotos';
 
 export default function HomePage() {
-  const numberOfColumns = getNumberOfColumns(window.innerWidth);
-  const collectionSets = getCollectionSets(collectionOfPhotos, numberOfColumns);
+  const { innerWidth } = window;
+  const numberOfColumns = getNumberOfColumns(innerWidth);
+  let tileWidth;
+
+  if (innerWidth >= 515) {
+    tileWidth = ((innerWidth - 6) / numberOfColumns) - 4;
+  } else {
+    tileWidth = innerWidth / numberOfColumns;
+  }
 
   return (
     <div className="tile-container">
-      {[...Array(numberOfColumns)].map((_, i) => (
-        <div className="tile-column" key={uuidv1()}>
-          {collectionSets[i].map(collectionProps => (
-            <Tile {...collectionProps} key={collectionProps.title} />
-          ))}
-        </div>
-      ))}
+      <Masonry>
+        {collectionOfPhotos.map(collectionProps => (
+          <Tile
+            {...collectionProps}
+            tileWidth={`${tileWidth}px`}
+            key={collectionProps.title}
+          />
+        ))}
+      </Masonry>
     </div>
   );
-}
-
-function getCollectionSets(collection, numberOfColumns) {
-  const numberOfTilesPerColumn = Math.floor(collection.length / numberOfColumns);
-  const collectionSets = chunk(collection, numberOfTilesPerColumn);
-  return distributeExcessCollection(collectionSets, numberOfColumns);
-}
-
-function distributeExcessCollection(collectionSets, numberOfColumns) {
-  if (collectionSets.length !== numberOfColumns) {
-    const excessCollection = collectionSets
-      .splice(numberOfColumns, collectionSets.length - numberOfColumns)
-      .reduce((a, b) => a.concat(b), []);
-
-    excessCollection.forEach((collection, i) => {
-      collectionSets[i].push(collection);
-    });
-  }
-
-  return collectionSets;
 }
 
 function getNumberOfColumns(windowInnerWidth) {
