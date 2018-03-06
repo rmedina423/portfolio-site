@@ -4,11 +4,6 @@ exports[`Tile Component should match snapshot 1`] = `
 <Link
   className="tile"
   replace={false}
-  style={
-    Object {
-      "maxWidth": "100px",
-    }
-  }
   to="'/another-page"
 >
   <div

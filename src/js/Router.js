@@ -4,9 +4,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import App from './components/App';
 import HomePage from './components/HomePage';
 
+const basename = process.env.NODE_ENV === 'production' ? '/portfolio-site' : '/';
+
 export default function Router() {
   return (
-    <BrowserRouter basename="/portfolio-site">
+    <BrowserRouter {...{ basename }}>
       <App>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/coming-soon" component={ComingSoonPage} />

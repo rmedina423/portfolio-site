@@ -1,39 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
 import Tile from './Tile';
 import collectionOfPhotos from '../collectionOfPhotos';
 
-export default function HomePage() {
-  const { innerWidth } = window;
-  const numberOfColumns = getNumberOfColumns(innerWidth);
-  let tileWidth;
+export default class HomePage extends Component {
+  constructor(props) {
+    super(props);
 
-  if (innerWidth >= 515) {
-    tileWidth = ((innerWidth - 6) / numberOfColumns) - 4;
-  } else {
-    tileWidth = innerWidth / numberOfColumns;
+    this.state = { layoutHidden: true };
+    this.handleLayoutComplete = this.handleLayoutComplete.bind(this);
   }
 
-  return (
-    <div className="tile-container">
-      <Masonry>
-        {collectionOfPhotos.map(collectionProps => (
-          <Tile
-            {...collectionProps}
-            tileWidth={`${tileWidth}px`}
-            key={collectionProps.title}
-          />
-        ))}
-      </Masonry>
-    </div>
-  );
-}
+  handleLayoutComplete() {
+    if (this.state.layoutHidden) {
+      this.setState({ layoutHidden: false });
+    }
+  }
 
-function getNumberOfColumns(windowInnerWidth) {
-  if (windowInnerWidth >= 1515) return 6;
-  if (windowInnerWidth >= 1265) return 5;
-  if (windowInnerWidth >= 1015) return 4;
-  if (windowInnerWidth >= 765) return 3;
-  if (windowInnerWidth >= 515) return 2;
-  if (windowInnerWidth >= 0) return 1;
+  render() {
+    return (
+      <div>
+        {this.state.layoutHidden && <div className="loader" key="loader" />}
+        <div
+          className={`tile-container ${this.state.layoutHidden && 'hide'}`}
+          key="tile-container"
+        >
+          <Masonry
+            onLayoutComplete={this.handleLayoutComplete}
+            options={{ transitionDuration: 0 }}
+          >
+            {collectionOfPhotos.map(collectionProps => (
+              <Tile {...collectionProps} key={collectionProps.title} />
+            ))}
+          </Masonry>
+        </div>
+      </div>
+    );
+  }
 }
