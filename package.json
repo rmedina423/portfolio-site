@@ -1,21 +1,19 @@
 {
   "name": "portfolio-site",
   "version": "0.0.1",
-  "description": "This is a general portfolio layout project using react",
+  "description": "Photography Portfolio using React & Masonry",
   "main": "index.js",
   "author": "Ryan M. Medina",
   "license": "MIT",
   "homepage": "http://rmedina423.github.io/portfolio-site/",
   "scripts": {
-    "lint": "eslint -c eslint.config.json .",
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack-dev-server --config webpack.dev.config.js",
     "jest": "NODE_ENV=test jest -c ./jest.config.json",
+    "lint": "eslint -c eslint.config.json .",
     "test": "yarn jest && yarn lint",
     "test:coverage": "yarn jest --coverage && yarn lint",
-    "travis:coverage": "yarn jest --coverage --maxWorkers=4 && yarn lint",
-    "test:cw": "yarn jest --coverage --watch && yarn lint",
-    "sendCoverage": "echo 'you need to set up code coverage integration with your tool of choice!'",
-    "build": " webpack --config webpack.prod.config.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js"
+    "travis:coverage": "yarn jest --coverage --maxWorkers=4 && yarn lint"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -56,6 +54,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-masonry-component": "^6.0.2",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-transition-group": "^2.2.1"
   }
 }

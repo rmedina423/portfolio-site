@@ -7,5 +7,7 @@ coverage
 # misc
 .idea
 dist
+yarn-error.log
+
 # keep gh-pages from being committed in main
 gh-pages
