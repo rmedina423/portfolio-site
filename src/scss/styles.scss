@@ -18,6 +18,32 @@ a {
 }
 
 .coming-soon-container {
+  position: absolute;
+  top: 73px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-73px);
+  opacity: 1;
+  transition: opacity .2s ease-in;
+  z-index: -1;
   text-align: center;
   color: #f16445;
+}
+
+.fade-exit.fade-exit-active {
+  position: absolute;
+  top: 73px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-enter, .fade-enter-active {
+  opacity: 0;
 }
