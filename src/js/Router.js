@@ -11,9 +11,8 @@ export default function Router() {
   return (
     <BrowserRouter {...{ basename }}>
       <Route 
-        render={({ location }) => {
-          console.log(location)
-          return <App>
+        render={({ location }) => (
+          <App>
             <TransitionGroup>
               <CSSTransition key={location.key} classNames="fade" timeout={200}>
                   <Switch location={location}>
@@ -23,7 +22,7 @@ export default function Router() {
               </CSSTransition>
             </TransitionGroup>
           </App>
-        }}
+        )}
       />
     </BrowserRouter>
   );
