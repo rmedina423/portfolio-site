@@ -14,50 +14,13 @@ header {
   font-size: 30px;
 }
 
-.mobile-menu-block {
-  display: flex;
-  cursor: pointer;
-  outline: none;
-}
-
 .desktop-menu-block {
   display: none;
-}
-
-.menu-icon {
-  margin-left: 20px;
-
-  > div + * {
-    margin-top: 5px;
-  }
-
-  .bar-1, .bar-2, .bar-3 {
-    width: 20px;
-    height: 4px;
-    background-color: #2f2d2e;
-    transition: 0.4s;
-  }
-
-  &.open .bar-1 {
-    transform: rotate(-45deg) translate(-6px, 5px);
-  }
-
-  &.open .bar-2 {
-    opacity: 0;
-  }
-
-  &.open .bar-3 {
-    transform: rotate(45deg) translate(-7px, -7px);
-  }
 }
 
 @media screen and (min-width: 750px) {
   .header-container {
     padding: 20px 32px;
-  }
-
-  .mobile-menu-block {
-    display: none;
   }
 
   .desktop-menu-block {

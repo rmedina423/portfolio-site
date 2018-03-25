@@ -16,30 +16,6 @@ exports[`Header Component should match snapshot 1`] = `
       </Link>
     </h1>
     <div
-      className="mobile-menu-block"
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      role="button"
-      tabIndex="0"
-    >
-      <h2>
-        Menu
-      </h2>
-      <div
-        className="menu-icon"
-      >
-        <div
-          className="bar-1"
-        />
-        <div
-          className="bar-2"
-        />
-        <div
-          className="bar-3"
-        />
-      </div>
-    </div>
-    <div
       className="desktop-menu-block"
     >
       <div
@@ -50,12 +26,6 @@ exports[`Header Component should match snapshot 1`] = `
           to="/"
         >
           Portfolio
-        </Link>
-        <Link
-          replace={false}
-          to="/"
-        >
-          About & Contact
         </Link>
       </div>
     </div>

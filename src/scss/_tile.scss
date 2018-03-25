@@ -40,17 +40,6 @@
   background: #1c1c1c;
 }
 
-.tile:hover {
-  .tile-overlay, .tile-overlay::before {
-    opacity: 1;
-    transition: opacity 0.25s ease;
-  }
-
-  .tile-overlay::before {
-    opacity: 0.7;
-  }
-}
-
 .tile-title {
   font-family: Barrio, cursive;
 
@@ -72,6 +61,17 @@
 }
 
 @media screen and (min-width: 515px) {
+  .tile:hover {
+    .tile-overlay, .tile-overlay::before {
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    .tile-overlay::before {
+        opacity: 0.7;
+    }
+  }
+  
   .tile {
     margin-bottom: 0px;
     width: 50%;

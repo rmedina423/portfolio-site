@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import App from '../../src/js/components/App';
 import HomePage from '../../src/js/components/HomePage';
 import Header from '../../src/js/components/Header';
-import Footer from '../../src/js/components/Footer';
 
 describe('App Component', function () {
   beforeEach(() => {
@@ -17,9 +16,5 @@ describe('App Component', function () {
 
   test('renders a Header', () => {
     expect(this.app.contains(<Header />)).toBe(true);
-  });
-
-  test('renders a Footer', () => {
-    expect(this.app.contains(<Footer />)).toBe(true);
   });
 });
