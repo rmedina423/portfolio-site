@@ -1,24 +1,36 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router';
+import * as rrd from 'react-router-dom';
+import { StaticRouter } from 'react-router';
 import Router from '../src/js/Router';
 import HomePage from '../src/js/components/HomePage';
+import ComingSoonPage from '../src/js/components/ComingSoonPage';
 
-describe('Router Component', function () {
-  // beforeEach(() => {
-  //   this.router = mount(<Router />);
-  // });
+describe('Router Component', function() {
+  const _BrowserRouter = rrd.BrowserRouter;
 
   beforeEach(() => {
-    this.router = mount(
-      <MemoryRouter initialEntries={['/']} initialIndex={0}>
+    rrd.BrowserRouter = ({ children }) => <div>{children}</div>; // eslint-disable-line
+
+    this.router = pathname => mount(
+      <StaticRouter location={pathname} context={{}}>
         <Router />
-      </MemoryRouter>
-    );
+      </StaticRouter>);
+  });
+
+  afterAll(() => {
+    rrd.BrowserRouter = _BrowserRouter;
   });
 
   test('/ route should render HomePage component', () => {
-    // const homePathRender = this.router.find({ path: '/' });
-    // expect(homePathRender.props().component).toBe(HomePage);
+    const homePathRender = this.router('/').find({ path: '/' });
+    expect(homePathRender.props().component).toBe(HomePage);
+  });
+
+  test('/coming-soon route should render ComingSoonPage component', () => {
+    const comingSoonPathRender = this.router('/coming-soon').find({
+      path: '/coming-soon'
+    });
+    expect(comingSoonPathRender.props().component).toBe(ComingSoonPage);
   });
 });

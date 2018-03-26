@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import App from './components/App';
 import HomePage from './components/HomePage';
+import ComingSoonPage from './components/ComingSoonPage';
 
 const basename = process.env.NODE_ENV === 'production' ? '/portfolio-site' : '/';
 
@@ -25,13 +26,5 @@ export default function Router() {
         )}
       />
     </BrowserRouter>
-  );
-}
-
-function ComingSoonPage () {
-  return (
-    <div className="coming-soon-container">
-      <h2>Coming Soon...</h2>
-    </div>
   );
 }
