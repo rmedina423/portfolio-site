@@ -1,10 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tile Component should match snapshot 1`] = `
-<Link
+<div
   className="tile"
-  replace={false}
-  to="'/another-page"
 >
   <div
     className="tile-overlay"
@@ -15,9 +13,6 @@ exports[`Tile Component should match snapshot 1`] = `
       <h2>
         The Chocolate Room1
       </h2>
-      <h3>
-        — view —
-      </h3>
     </div>
   </div>
   <img
@@ -25,5 +20,5 @@ exports[`Tile Component should match snapshot 1`] = `
     className="tile-img"
     src="./images/ryan_pool_CO3.jpg"
   />
-</Link>
+</div>
 `;

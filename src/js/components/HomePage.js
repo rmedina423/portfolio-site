@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Masonry from 'react-masonry-component';
 import Tile from './Tile';
-import collectionOfPhotos from '../collectionOfPhotos';
+import photos from '../photos';
 
 export default class HomePage extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.state = { layoutHidden: true };
     this.handleLayoutComplete = this.handleLayoutComplete.bind(this);
   }
@@ -19,22 +18,21 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.layoutHidden && <div className="loader" key="loader" />}
+      <Fragment>
+        {this.state.layoutHidden && <div className="loader" />}
         <div
-          className={`tile-container ${this.state.layoutHidden && 'hide'}`}
-          key="tile-container"
+          className={`tile-container${this.state.layoutHidden ? ' hide' : ''}`}
         >
           <Masonry
             onLayoutComplete={this.handleLayoutComplete}
             options={{ transitionDuration: 0 }}
           >
-            {collectionOfPhotos.map(collectionProps => (
-              <Tile {...collectionProps} key={collectionProps.title} />
+            {photos.map(photo => (
+              <Tile {...photo} key={photo.title} />
             ))}
           </Masonry>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

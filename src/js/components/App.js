@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
 import Header from './Header';
 
 export default function App(props) {
   return (
-    <div>
+    <Fragment>
       <Header />
       {props.children}
-    </div>
+    </Fragment>
   );
 }
 

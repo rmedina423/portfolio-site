@@ -8,27 +8,8 @@ exports[`Header Component should match snapshot 1`] = `
     <h1
       className="header-title"
     >
-      <Link
-        replace={false}
-        to="/"
-      >
-        Ryan Medina
-      </Link>
+      Ryan Medina
     </h1>
-    <div
-      className="desktop-menu-block"
-    >
-      <div
-        className="sub-menu-block"
-      >
-        <Link
-          replace={false}
-          to="/"
-        >
-          Portfolio
-        </Link>
-      </div>
-    </div>
   </div>
 </header>
 `;

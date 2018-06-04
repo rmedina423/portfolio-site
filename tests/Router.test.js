@@ -12,8 +12,11 @@ describe('Router Component', function() {
   beforeEach(() => {
     rrd.BrowserRouter = ({ children }) => <div>{children}</div>; // eslint-disable-line
 
-    this.router = pathname => mount(
-      <StaticRouter location={pathname} context={{}}>
+    this.router = pathname => mount( // eslint-disable-line
+      <StaticRouter
+        location={pathname}
+        context={{}}
+      >
         <Router />
       </StaticRouter>);
   });
